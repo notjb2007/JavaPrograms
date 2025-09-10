@@ -1,0 +1,26 @@
+Java does not allow global variable.
+every variable in java must be declared inside a class.
+
+a variable declared with static keyword is called class variable.
+to declare a static variable: - 
+static (datatype) (variable)
+
+Class can be defined inside a same class is said to be nested class.
+
+Recursion Programs: - 
+
+public class recursive{
+	int n;
+	int factorial(int n){
+		if(n==0)
+			return(1);
+		else
+			return (n*factorial(n-1));
+	}
+	public static void main(String[] args){
+		recursive x = new Recursive();
+		x.n = Integer.praseInt(args[0]);
+		System.out.println(factorial(x.n));
+	}
+}
+
