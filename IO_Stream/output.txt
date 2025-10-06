@@ -1,0 +1,3 @@
+Java I/O streams are powerful.
+Character streams are for text.
+Byte streams are for binary data.

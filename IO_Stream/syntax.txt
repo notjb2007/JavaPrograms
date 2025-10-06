@@ -1,0 +1,41 @@
+Reading a text file (Line by Line): - 
+// Use BufferedReader for efficient, line-by-line reading of text.
+try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
+    String line;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    // Handle exception
+}
+
+Writing a text file: - 
+// Use BufferedWriter for efficient writing of text.
+try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
+    writer.write("Hello, World!");
+    writer.newLine();
+} catch (IOException e) {
+    // Handle exception
+}
+
+Reading a binary file: - 
+// Use FileInputStream for reading raw bytes from a file.
+try (FileInputStream in = new FileInputStream("image.jpg")) {
+    byte[] buffer = new byte[1024];
+    int bytesRead;
+    while ((bytesRead = in.read(buffer)) != -1) {
+        // Process the bytes
+    }
+} catch (IOException e) {
+    // Handle exception
+}
+
+Writing a binary file: - 
+// Use FileOutputStream for writing raw bytes to a file.
+try (FileOutputStream out = new FileOutputStream("image_copy.jpg")) {
+    byte[] dataToWrite = /* some byte array */;
+    out.write(dataToWrite);
+} catch (IOException e) {
+    // Handle exception
+}
+

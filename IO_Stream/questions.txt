@@ -1,0 +1,34 @@
+1. What's the main difference between Byte Streams and Character Streams?
+Byte Streams (like FileInputStream and FileOutputStream) handle data as a raw sequence of 8-bit bytes. 
+They are ideal for binary files like images, audio, and executables.
+Character Streams (like FileReader and FileWriter) handle data as a sequence of 16-bit Unicode characters. 
+They automatically handle character encoding and are the correct choice for reading and writing text files.
+
+2. Why is buffering important in I/O?
+Buffering significantly improves performance. 
+Instead of making a slow system call for every single byte or character read or written to disk, 
+data is first read into or written from a memory buffer (a chunk of RAM). 
+The actual, slow disk I/O happens in large chunks when the buffer is full. 
+This greatly reduces the number of interactions with the physical device. 
+This is the main purpose of BufferedReader and BufferedWriter.
+
+3. Can you explain the role of InputStreamReader and OutputStreamWriter?
+These are bridge classes. Their job is to convert a byte stream into a character stream, and vice-versa.
+
+InputStreamReader wraps an InputStream (which reads bytes) and decodes those bytes into characters. 
+It's essential for reading text from a source that provides bytes, like System.in.
+OutputStreamWriter wraps an OutputStream (which writes bytes) and encodes characters into bytes before writing them.
+
+4. What is the difference between flush() and close() on an output stream?
+flush(): This method forces any data currently held in the buffer to be written to the destination immediately. 
+The stream remains open and can be used for further writing.
+
+close(): This method first calls flush() to write out any remaining buffered data, 
+and then it permanently closes the stream, releasing any system resources associated with it. 
+You cannot use a stream after it has been closed.
+
+5. When should you use DataInputStream and DataOutputStream?
+You should use these classes when you need to read or write primitive Java data types (int, double, boolean, etc.) 
+and String objects to a binary file in a platform-independent way. 
+They are not suitable for reading human-readable text files. 
+A common mistake is trying to use DataInputStream to read a .txt file.
