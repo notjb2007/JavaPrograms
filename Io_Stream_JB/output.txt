@@ -1,0 +1,4 @@
+This is written using PrintStream.
+2025
+45.67
+true

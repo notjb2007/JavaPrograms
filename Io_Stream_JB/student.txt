@@ -1,0 +1,6 @@
+=== Student Details ===
+Name: John Doe
+Age: 21
+Department: Computer Science
+Percentage: 89.75%
+Passed: true

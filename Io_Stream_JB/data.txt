@@ -1,0 +1,2 @@
+Buffered streams are faster.
+They reduce I/O operations.
