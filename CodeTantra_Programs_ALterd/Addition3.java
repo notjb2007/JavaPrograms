@@ -12,7 +12,7 @@ public class Addition3 {
         System.out.println("Sum of " + a + ", " + b + " and " + c + " : " + (a + b + c));
     }
     public static void main(String[] args) {
-        Addition obj = new Addition();
+        Addition3 obj = new Addition3();
         int i1 = Integer.parseInt(args[0]);
         int i2 = Integer.parseInt(args[1]);
         float f1 = Float.parseFloat(args[2]);
